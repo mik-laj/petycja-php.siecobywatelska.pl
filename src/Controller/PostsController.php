@@ -61,6 +61,8 @@ class PostsController extends AppController
             $post->user_id = $this->Auth->user('id');
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('The post has been saved.'));
+                
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The post could not be saved. Please, try again.'));
@@ -88,6 +90,8 @@ class PostsController extends AppController
             $post = $this->Posts->patchEntity($post, $this->request->data);
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('The post has been saved.'));
+                
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The post could not be saved. Please, try again.'));
@@ -114,7 +118,8 @@ class PostsController extends AppController
         } else {
             $this->Flash->error(__('The post could not be deleted. Please, try again.'));
         }
+        
+
         return $this->redirect(['action' => 'index']);
     }
-
 }

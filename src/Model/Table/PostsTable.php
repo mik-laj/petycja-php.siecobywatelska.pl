@@ -76,7 +76,7 @@ class PostsTable extends Table
 
         $validator
             ->requirePresence('link_target', 'create')
-            ->allowEmpty('link_target', function($context) {
+            ->allowEmpty('link_target', function ($context) {
                 return $context && $context['data'] && $context['data']['type'] != 'link';
             });
 
@@ -93,6 +93,8 @@ class PostsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        
+
         return $rules;
     }
 

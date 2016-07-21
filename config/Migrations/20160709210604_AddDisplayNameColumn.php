@@ -24,4 +24,3 @@ class AddDisplayNameColumn extends AbstractMigration
             ->update();
     }
 }
-

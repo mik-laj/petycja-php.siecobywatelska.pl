@@ -26,4 +26,3 @@ class AlterAllowCommentToBeEmpty extends AbstractMigration
             ->update();
     }
 }
-

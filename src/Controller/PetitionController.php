@@ -36,7 +36,8 @@ class PetitionController extends AppController
         $this->add();
     }
 
-    public function listSignature(){
+    public function listSignature()
+    {
         $signatures = $this->paginate($this->Signatures);
 
         $this->set(compact('signatures'));
@@ -50,6 +51,8 @@ class PetitionController extends AppController
             $petition = $this->Signatures->patchEntity($signature, $this->request->data);
             if ($this->Signatures->save($signature)) {
                 $this->Flash->success(__('The signature has been saved.'));
+                
+
                 return $this->redirect(['action' => 'thank']);
             } else {
                 $this->Flash->error(__('The signature could not be saved. Please, try again.'));
@@ -66,8 +69,5 @@ class PetitionController extends AppController
      */
     public function thank()
     {
-
     }
-
-
 }

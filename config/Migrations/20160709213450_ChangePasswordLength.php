@@ -26,4 +26,3 @@ class ChangePasswordLength extends AbstractMigration
             ->update();
     }
 }
-

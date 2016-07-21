@@ -53,6 +53,8 @@ class SignaturesController extends AppController
             $signature = $this->Signatures->patchEntity($signature, $this->request->data);
             if ($this->Signatures->save($signature)) {
                 $this->Flash->success(__('The signature has been saved.'));
+                
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The signature could not be saved. Please, try again.'));
@@ -78,6 +80,8 @@ class SignaturesController extends AppController
             $signature = $this->Signatures->patchEntity($signature, $this->request->data);
             if ($this->Signatures->save($signature)) {
                 $this->Flash->success(__('The signature has been saved.'));
+                
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The signature could not be saved. Please, try again.'));
@@ -103,6 +107,8 @@ class SignaturesController extends AppController
         } else {
             $this->Flash->error(__('The signature could not be deleted. Please, try again.'));
         }
+        
+
         return $this->redirect(['action' => 'index']);
     }
 }

@@ -35,7 +35,8 @@ class Post extends Entity
         'id' => false
     ];
 
-    public function isHasBennModifited(){
+    public function isHasBennModifited()
+    {
         // Lte = Less or equal
         return $this->created->modify('+15 minutes')->lte($this->modified);
     }
